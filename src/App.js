@@ -1,5 +1,4 @@
 import { Switch, Route, Redirect } from 'react-router-dom'
-import './App.css'
 import LandingPage from './pages/login'
 import Home from './pages/home'
 import ProtectedRoute from './components/ProtectedRoute'

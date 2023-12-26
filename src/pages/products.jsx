@@ -4,9 +4,11 @@ import Layout from '../components/layout'
 import ProductList from '../components/productsList'
 import '../styles/products.css'
 import Cookies from 'js-cookie'
+import { TailSpin } from 'react-loader-spinner'
 
 const Products = () => {
   const [productList, setProductList] = useState([])
+  console.log(productList)
 
   useEffect(() => {
     const getData = async () => {
@@ -25,15 +27,27 @@ const Products = () => {
     return () => getData()
   }, [productList])
 
+  const loadingScreen = () => {
+    return (
+      <div className='loader-container'>
+        <TailSpin color='#00BFFF' height={100} width={100} />
+      </div>
+    )
+  }
+
   return (
     <Layout>
       <div className='product-container'>
         <h1>products</h1>
-        <div className='card-container'>
-          {productList.map((item) => {
-            return <ProductList key={item.id} prods={item} />
-          })}
-        </div>
+        {productList.length < !0 ? (
+          loadingScreen()
+        ) : (
+          <div className='card-container'>
+            {productList.map((item) => {
+              return <ProductList key={item.id} prods={item} />
+            })}
+          </div>
+        )}
       </div>
     </Layout>
   )
