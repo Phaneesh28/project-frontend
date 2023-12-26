@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route, Redirect } from 'react-router-dom'
+import './App.css'
+import LandingPage from './pages/login'
+import Home from './pages/home'
+import ProtectedRoute from './components/ProtectedRoute'
+import Products from './pages/products'
+import Cart from './pages/cart'
+import DetailsPage from './pages/detailsPage'
+import Error from './pages/error'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Switch>
+      <Route exact path='/login' component={LandingPage} />
+      <ProtectedRoute exact path='/' component={Home} />
+      <ProtectedRoute exact path='/products' component={Products} />
+      <ProtectedRoute exact path='/products/:id' component={DetailsPage} />
+      <ProtectedRoute exact path='/cart' component={Cart} />
+      <Route exact path='/404-Error' component={Error} />
+      <Redirect to='/404-Error' />
+    </Switch>
+  )
 }
 
-export default App;
+export default App

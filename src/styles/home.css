@@ -1,0 +1,88 @@
+.h-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-image: url('../../public/wave-haikei_3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 100vw;
+  height: 65vh;
+  overflow: scroll;
+}
+.style-heading {
+  background: linear-gradient(
+    90deg,
+    rgb(16, 16, 180) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  width: fit-content;
+  color: transparent;
+  background-clip: text;
+  overflow: hidden;
+}
+
+.home-bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #0f0f0f;
+  height: 100%;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f0f0f;
+  height: 100vh;
+  padding: 0;
+}
+
+.about-container {
+  background-image: url('../../public/wave-haikeiInvert.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #e2e2e2;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20%;
+}
+
+.align-about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-left: 10px;
+}
+.align-about ul {
+  width: 240px;
+  align-self: center;
+}
+
+@media screen and (max-width: 567px) {
+  .align-about ul {
+    width: 230px;
+    text-align: center;
+  }
+  .about-container {
+    padding-top: 50%;
+  }
+}
+@media screen and (max-width: 445px) {
+  .align-about ul {
+    width: 160px;
+    text-align: center;
+  }
+  .about-container {
+    padding-top: 120%;
+  }
+}

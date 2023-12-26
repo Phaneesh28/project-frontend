@@ -1,0 +1,45 @@
+.cart-container {
+  background-color: #0f0f0f;
+  height: 100vh;
+  overflow: scroll;
+  color: #e2e2e2;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cart-card {
+  display: flex;
+  gap: 20px;
+  border-style: solid;
+  padding: 10px;
+  border-width: 1px;
+}
+table {
+  width: 50vw;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+thead th {
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+tfoot {
+  font-weight: bold;
+}
