@@ -25,7 +25,7 @@ const Products = () => {
         })
     }
     return () => getData()
-  }, [])
+  })
 
   const loadingScreen = () => {
     return (
