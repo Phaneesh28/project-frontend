@@ -10,9 +10,9 @@ const Products = () => {
   const [productList, setProductList] = useState([])
 
   useEffect(() => {
-    const getData = () => {
+    const getData = async () => {
       const jwtToken = Cookies.get('jwtToken')
-      axios
+      await axios
         .get('https://devstorebhargav.onrender.com/api/products', {
           headers: { authorization: `Bearer ${jwtToken}` },
         })
@@ -24,8 +24,8 @@ const Products = () => {
           console.log(e)
         })
     }
-    return () => getData()
-  }, [productList])
+    getData()
+  }, [])
 
   const loadingScreen = () => {
     return (

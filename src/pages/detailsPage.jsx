@@ -8,12 +8,12 @@ import '../styles/prodsComponent.css'
 const DetailsPage = (props) => {
   const [details, setDetails] = useState()
   useEffect(() => {
-    const getData = () => {
+    const getData = async () => {
       const { match } = props
       const id = match.params.id
       const token = Cookies.get('jwtToken')
 
-      axios
+      await axios
         .get(`https://devstorebhargav.onrender.com/api/products/${id}`, {
           headers: { authorization: `Bearer ${token}` },
         })
@@ -24,8 +24,8 @@ const DetailsPage = (props) => {
           console.log(e)
         })
     }
-    return () => getData()
-  })
+    getData()
+  }, [])
 
   const loadingScreen = () => {
     return (
