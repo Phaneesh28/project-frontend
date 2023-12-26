@@ -31,7 +31,7 @@ const Products = () => {
         <h1>products</h1>
         <div className='card-container'>
           {productList.map((item) => {
-            return <ProductList prods={item} key={item.id} />
+            return <ProductList key={item.id} prods={item} />
           })}
         </div>
       </div>
