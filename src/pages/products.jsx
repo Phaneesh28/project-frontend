@@ -8,7 +8,6 @@ import { TailSpin } from 'react-loader-spinner'
 
 const Products = () => {
   const [productList, setProductList] = useState([])
-  console.log(productList)
 
   useEffect(() => {
     const getData = async () => {
@@ -19,6 +18,7 @@ const Products = () => {
         })
         .then((res) => {
           setProductList(res.data)
+          console.log(productList)
         })
         .catch((e) => {
           console.log(e)
