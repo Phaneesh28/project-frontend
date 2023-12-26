@@ -12,7 +12,7 @@ const Products = () => {
   useEffect(() => {
     const getData = async () => {
       const jwtToken = Cookies.get('jwtToken')
-      await axios
+      axios
         .get('https://devstorebhargav.onrender.com/api/products', {
           headers: { authorization: `Bearer ${jwtToken}` },
         })
