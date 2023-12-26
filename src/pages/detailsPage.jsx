@@ -8,12 +8,12 @@ import '../styles/prodsComponent.css'
 const DetailsPage = (props) => {
   const [details, setDetails] = useState()
   useEffect(() => {
-    const getData = async () => {
+    const getData = () => {
       const { match } = props
       const id = match.params.id
       const token = Cookies.get('jwtToken')
 
-      await axios
+      axios
         .get(`https://devstorebhargav.onrender.com/api/products/${id}`, {
           headers: { authorization: `Bearer ${token}` },
         })

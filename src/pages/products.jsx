@@ -10,7 +10,7 @@ const Products = () => {
   const [productList, setProductList] = useState([])
 
   useEffect(() => {
-    const getData = async () => {
+    const getData = () => {
       const jwtToken = Cookies.get('jwtToken')
       axios
         .get('https://devstorebhargav.onrender.com/api/products', {
