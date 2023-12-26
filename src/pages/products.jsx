@@ -24,7 +24,7 @@ const Products = () => {
         })
     }
     return () => getData()
-  }, [])
+  }, [productList])
 
   const loadingScreen = () => {
     return (
