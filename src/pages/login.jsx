@@ -3,6 +3,7 @@ import { useHistory, Redirect } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import '../styles/landingpage.css'
+import { TailSpin } from 'react-loader-spinner'
 
 const LandingPage = () => {
   const [showLogin, setShowLogin] = useState(true)
@@ -11,6 +12,7 @@ const LandingPage = () => {
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [showMessage, setShowMessage] = useState('')
+  const [loading, setLoading] = useState(false)
   const history = useHistory()
 
   const loginSuccess = (token) => {
@@ -23,6 +25,7 @@ const LandingPage = () => {
     if (username === '' || password === '') {
       return setShowMessage('Please enter username and password')
     }
+    setLoading(true)
     const encoded = btoa(password)
     await axios
       .post('https://devstorebhargav.onrender.com/api/login', {
@@ -35,7 +38,8 @@ const LandingPage = () => {
       })
       .catch((e) => {
         console.log(e)
-        setShowMessage(e.response)
+        setShowMessage(e.response.data)
+        setLoading(false)
       })
     setUsername('')
     setPassword('')
@@ -146,11 +150,19 @@ const LandingPage = () => {
   if (jwtToken !== undefined) {
     return <Redirect to='/' />
   } else {
-    return (
-      <div className='main-container'>
-        {showLogin ? loginForm() : registerForm()}
-      </div>
-    )
+    if (loading) {
+      return (
+        <div className='loader-container'>
+          <TailSpin color='#00BFFF' height={100} width={100} />
+        </div>
+      )
+    } else {
+      return (
+        <div className='main-container'>
+          {showLogin ? loginForm() : registerForm()}
+        </div>
+      )
+    }
   }
 }
 
