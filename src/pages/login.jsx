@@ -41,12 +41,12 @@ const LandingPage = () => {
     setPassword('')
   }
 
-  const registerUser = (e) => {
+  const registerUser = async (e) => {
     e.preventDefault()
     if (username === '' || password === '' || email === '' || phone === '') {
       return setShowMessage('Please enter all the details')
     }
-    axios
+    await axios
       .post('https://devstorebhargav.onrender.com/api/register', {
         username,
         password,
