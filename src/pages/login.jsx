@@ -59,11 +59,10 @@ const LandingPage = () => {
       })
       .then((res) => {
         alert(res.data)
-        setShowLogin(true)
       })
       .catch((e) => {
         console.log(e)
-        setShowMessage(e.response)
+        setShowMessage(e.response.data)
       })
     setUsername('')
     setPassword('')
