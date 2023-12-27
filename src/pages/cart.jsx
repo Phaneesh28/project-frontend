@@ -68,7 +68,7 @@ function Cart() {
               </tbody>
               <tfoot>
                 <tr>
-                  <td colspan='4'>Total</td>
+                  <td colSpan='4'>Total</td>
                   <td>
                     {cartItems
                       .reduce((total, item) => total + item.price, 0)
@@ -80,7 +80,7 @@ function Cart() {
             <button className='btn btn-danger'>Checkout</button>
           </>
         ) : (
-          <div className='cart-container'>
+          <div className='nothing-container'>
             <h4>Cart is Empty</h4>
           </div>
         )}
