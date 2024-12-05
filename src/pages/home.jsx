@@ -5,7 +5,7 @@ import '../styles/home.css'
 
 const list = [
   "Customization like never before: Choose from a curated selection of components or unleash your inner engineer with our build-your-own platform. We'll make sure every piece fits flawlessly.",
-  'Expert guidance: Our knowledgeable team is always here to assist you, answer your questions, and recommend the perfect setup for your needs and budget.',
+  "Expert guidance: Our knowledgeable team is always here to assist you, answer your questions, and recommend the perfect setup for your needs and budget.",
   "More than just hardware: We don't stop at the PC. We offer a wide range of peripherals, software, and accessories to complete your ultimate battlestation or workspace.",
   "Unmatched support: We stand behind our products with industry-leading warranties and responsive customer service, ensuring you're never left in the dark.",
 ]
